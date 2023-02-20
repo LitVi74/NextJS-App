@@ -1,5 +1,6 @@
 import MainContainer from "../components/Main.Container";
 import {IPost} from "../types/posts";
+import Link from "next/link";
 
 interface IIndex {
     posts: IPost[];
@@ -13,7 +14,9 @@ const Index = ({posts}: IIndex) => {
                 <ul>
                     {posts.map(post =>
                     <li key={post.id}>
-                        {post.title}
+                        <Link href={`/posts/${post.id}`}>
+                            {post.title}
+                        </Link>
                     </li>
                     )}
                 </ul>
