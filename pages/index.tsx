@@ -1,8 +1,12 @@
+import MainContainer from "../components/Main.Container";
+
 const Index = () => {
     return (
-        <div>
-            Home Page
-        </div>
+        <MainContainer>
+            <div>
+                Home Page
+            </div>
+        </MainContainer>
     );
 };
 
