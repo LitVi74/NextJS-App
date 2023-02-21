@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import styles from "../stiles/MainContainer.module.scss";
 
 interface IMineContainer {
     children: JSX.Element;
@@ -12,15 +13,15 @@ const MainContainer = ({children, pageTitle}: IMineContainer) => {
             <Head>
                 <title>{pageTitle}</title>
             </Head>
-            <nav>
-                <Link href={'/'}>
+            <nav className={styles.navigate}>
+                <Link href={'/'} className={styles.navigate__link}>
                     Home
                 </Link>
-                <Link href={'/users'}>
+                <Link href={'/users'} className={styles.navigate__link}>
                     Users
                 </Link>
             </nav>
-            <div>
+            <div className={styles.container}>
                 {children}
             </div>
         </>
