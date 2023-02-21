@@ -2,6 +2,7 @@ import React from 'react';
 import MainContainer from "../components/Main.Container";
 import {IUser} from "../types/users";
 import Link from "next/link";
+import UserList from "../components/UserList";
 
 interface IUsersComponent {
     users: IUser[];
@@ -14,15 +15,7 @@ const Users = ({users}: IUsersComponent) => {
                 <h1>
                     Users Page
                 </h1>
-                <ul>
-                    {users.map(user =>
-                    <li key={user.id}>
-                        <Link href={`/users/${user.id}`}>
-                            {user.username}
-                        </Link>
-                    </li>
-                    )}
-                </ul>
+                <UserList users={users} />
             </>
         </MainContainer>
     );
