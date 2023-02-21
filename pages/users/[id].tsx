@@ -1,7 +1,7 @@
 import MainContainer from "../../components/Main.Container";
 import {IUser} from "../../types/users";
 import {IPost} from "../../types/posts";
-import Link from "next/link";
+import PostList from "../../components/PostList";
 
 interface IUserComponent {
     user: IUser;
@@ -14,15 +14,7 @@ export default function User ({user, userPosts}: IUserComponent) {
             <>
                 <h1>{user.username}</h1>
                 <p>User full name: {user.name}</p>
-                <ul>
-                    {userPosts.map(post =>
-                    <li>
-                        <Link href={`/posts/${post.id}`}>
-                            {post.title}
-                        </Link>
-                    </li>
-                    )}
-                </ul>
+                <PostList posts={userPosts} />
             </>
         </MainContainer>
     )
