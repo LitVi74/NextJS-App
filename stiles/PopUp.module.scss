@@ -1,0 +1,30 @@
+@use 'colors';
+
+.pop_up {
+  position: fixed;
+
+  display: flex;
+  justify-content: center;
+  padding: 100px;
+
+  background-color: rgba(0, 0, 0, .5);
+  width: 100vw;
+  height: 100vh;
+
+  &__container {
+    padding: 40px;
+
+    width: 60vw;
+    height: 40vh;
+    overflow-y: auto;
+    overflow-wrap: break-word;
+    text-align: center;
+
+    background-color: colors.$mainColor;
+    border-radius: 20px;
+
+    & h1{
+      margin-bottom: 16px;
+    }
+  }
+}
